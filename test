@@ -1,0 +1,7 @@
+#!name=test
+#!desc=666
+#!system=ios
+
+
+[URL Rewrite]
+http://6qq.cn http://file.2.ke header
