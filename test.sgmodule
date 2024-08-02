@@ -3,5 +3,9 @@
 #!system=ios
 
 
+[Host]
+xiaoya.host = 192.168.50.50
+a.com = 192.168.55.55
+
 [URL Rewrite]
 http://6qq.cn http://file.2.ke header
