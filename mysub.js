@@ -1,16 +1,19 @@
-function operator(proxies = [], targetPlatform, context) {
-  // 获取参数中的机场名前缀
-  const prefix = context.args.prefix || "机场名"; // 默认前缀为 "机场名"
+/**
+ * 更新日期：2024-04-05 15:30:15
+ * 用法：Sub-Store 脚本操作添加
+ * add-prefix.js
+ */
 
-  // 遍历每个节点并添加前缀
-  proxies.forEach(proxy => {
-    proxy.name = `${prefix} ${proxy.name}`; // 在节点名前添加前缀
+// 获取输入参数
+const inArg = $arguments; // console.log(inArg)
+const PREFIX = inArg.prefix || "机场名"; // 默认前缀为 "机场名"
+
+// 处理代理节点
+function operator(proxies = [], targetPlatform, context) {
+  proxies.forEach((proxy) => {
+    // 在节点名前添加前缀，并保持原来的节点名在后方
+    proxy.name = `${PREFIX} ${proxy.name}`;
   });
 
-  // 返回处理后的代理节点数组
   return proxies;
 }
-
-// 示例调用
-// const result = operator([{ name: "节点1" }, { name: "节点2" }], "目标平台", { args: { prefix: "MM" } });
-// console.log(result);
