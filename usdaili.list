@@ -21,11 +21,21 @@ DOMAIN-SUFFIX,securetheorem.com
 DOMAIN-SUFFIX,streetscape.com
 DOMAIN-SUFFIX,wealthscape.com
 DOMAIN-KEYWORD,fidelity
-DOMAIN-KEYWORD,t-mobile
-DOMAIN-SUFFIX,t-mo.cc
 DOMAIN-KEYWORD,chase
 DOMAIN-KEYWORD,jpmorgan
 DOMAIN-KEYWORD,paymentech
 DOMAIN-KEYWORD,wirex
 DOMAIN-KEYWORD,mixpanel
 DOMAIN-KEYWORD,monzo
+# t-mobile规则,包括wificall
+# > DX注：需支持UDP 
+IP-CIDR,66.94.0.0/19,no-resolve
+IP-CIDR,206.29.177.36/32,no-resolve
+IP-CIDR,208.54.0.0/16,no-resolve
+DOMAIN-KEYWORD,t-mobile
+DOMAIN-SUFFIX,t-mo.cc
+# Wifi Calling
+DOMAIN,epdg.epc.mnc240.mcc310.pub.3gppnetwork.org
+DOMAIN,epdg.epc.mnc260.mcc310.pub.3gppnetwork.org //通过UDP 4500端口实现VoWifi
+DOMAIN,ss.epdg.epc.mnc260.mcc310.pub.3gppnetwork.org
+DOMAIN,ss.epdg.epc.geo.mnc260.mcc310.pub.3gppnetwork.org
