@@ -1,0 +1,31 @@
+# 单行走us代理
+
+DOMAIN-KEYWORD,hsbc
+DOMAIN-SUFFIX,transferwise.com
+DOMAIN-KEYWORD,wise
+DOMAIN-KEYWORD,schwab
+DOMAIN-KEYWORD,capital
+DOMAIN-KEYWORD,sofi
+DOMAIN-KEYWORD,zelle
+DOMAIN-SUFFIX,sentry.io
+# 富国
+DOMAIN-KEYWORD,wells
+DOMAIN-SUFFIX,wf.com
+DOMAIN-KEYWORD,appdynamics
+DOMAIN-KEYWORD,equifax
+DOMAIN-KEYWORD,amex
+DOMAIN-KEYWORD,american
+DOMAIN-KEYWORD,optimizely.com
+DOMAIN-KEYWORD,aexp-static
+DOMAIN-SUFFIX,securetheorem.com
+DOMAIN-SUFFIX,streetscape.com
+DOMAIN-SUFFIX,wealthscape.com
+DOMAIN-KEYWORD,fidelity
+DOMAIN-KEYWORD,t-mobile
+DOMAIN-SUFFIX,t-mo.cc
+DOMAIN-KEYWORD,chase
+DOMAIN-KEYWORD,jpmorgan
+DOMAIN-KEYWORD,paymentech
+DOMAIN-KEYWORD,wirex
+DOMAIN-KEYWORD,mixpanel
+DOMAIN-KEYWORD,monzo
