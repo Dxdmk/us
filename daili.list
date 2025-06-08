@@ -2,6 +2,7 @@
 
 # 自己专用-走代理的配置
 DOMAIN-SUFFIX,testtest.cn
+DOMAIN-SUFFIX,m-team.cc
 DOMAIN-KEYWORD,interactivebrokers
 DOMAIN-KEYWORD,redfinger
 DOMAIN-KEYWORD,thetvdb
