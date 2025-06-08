@@ -1,0 +1,9 @@
+# 单行直连
+
+
+# ACL4SSR标志 如没有，代表不是用ACL4SSR规则
+DOMAIN-SUFFIX,acl4ssr
+
+# 自己专用
+DOMAIN-SUFFIX,hsbc.com
+DOMAIN-SUFFIX,ailbaba.me
