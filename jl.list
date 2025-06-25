@@ -1,3 +1,4 @@
 # 家里网段走代理
 # IP-CIDR,192.168.0.0/16,no-resolve
 DOMAIN-KEYWORD,nxin,no-resolve
+DOMAIN,qunhui.dx2.cc,no-resolve
