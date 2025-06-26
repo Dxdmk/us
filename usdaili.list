@@ -39,3 +39,14 @@ DOMAIN,epdg.epc.mnc240.mcc310.pub.3gppnetwork.org
 DOMAIN,epdg.epc.mnc260.mcc310.pub.3gppnetwork.org //通过UDP 4500端口实现VoWifi
 DOMAIN,ss.epdg.epc.mnc260.mcc310.pub.3gppnetwork.org
 DOMAIN,ss.epdg.epc.geo.mnc260.mcc310.pub.3gppnetwork.org
+# ASN
+IP-ASN,40682,no-resolve
+IP-ASN,46989,no-resolve
+IP-ASN,53821,no-resolve
+IP-ASN,54141,no-resolve
+IP-ASN,7743,no-resolve
+IP-ASN,40923,no-resolve
+IP-ASN,13322,no-resolve
+IP-ASN,4196,no-resolve
+IP-ASN,11409,no-resolve
+IP-ASN,6307,no-resolve
