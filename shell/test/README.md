@@ -27,12 +27,12 @@
 
 **通过 `wget` 运行:**
 ```bash
-wget -O report.sh [https://raw.githubusercontent.com/YOUR_USERNAME/YOUR_REPO/main/report.sh](https://raw.githubusercontent.com/YOUR_USERNAME/YOUR_REPO/main/report.sh) && sudo bash report.sh
+bash <(curl -sL https://raw.githubusercontent.com/Dxdmk/us/refs/heads/main/shell/test/test.sh)
 ```
 
 **通过 `curl` 运行:**
 ```bash
-curl -L [https://raw.githubusercontent.com/YOUR_USERNAME/YOUR_REPO/main/report.sh](https://raw.githubusercontent.com/YOUR_USERNAME/YOUR_REPO/main/report.sh) -o report.sh && sudo bash report.sh
+bash <(wget -qO- https://raw.githubusercontent.com/Dxdmk/us/refs/heads/main/shell/test/test.sh)
 ```
 > **注意**: 请将 `YOUR_USERNAME/YOUR_REPO` 替换为您在GitHub上的实际用户名和仓库名。脚本需要 `root` 权限才能访问底层的硬件信息。
 
