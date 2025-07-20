@@ -1,45 +1,44 @@
-Server Hardware Info Report Script (服务器硬件信息报告脚本)
+# Server Hardware Info Report Script (服务器硬件信息报告脚本)
+
 这是一个功能强大的Bash脚本，用于检测物理服务器或VPS的详细硬件信息，并生成一份美观、易于阅读的报告。它特别适合服务器管理员、运维工程师以及所有需要在Linux环境下快速了解硬件配置的用户。
 
-✨ 功能特性 (Features)
-全面的硬件检测:
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-系统: 主机名、操作系统版本、内核、运行时间。
+---
 
-处理器: 型号、核心数、线程数、频率、缓存、实时使用率。
+## ✨ 功能特性 (Features)
 
-内存: 总量、已用、可用，并能详细列出每个物理内存条的型号、制造商、频率、序列号等。
+* **全面的硬件检测**:
+    * **系统**: 主机名、操作系统版本、内核、运行时间。
+    * **处理器**: 型号、核心数、线程数、频率、缓存、实时使用率。
+    * **内存**: 总量、已用、可用，并能详细列出每个物理内存条的型号、制造商、频率、序列号等。
+    * **硬盘**: 磁盘分区使用情况，并能深入检测每块物理硬盘的型号、容量、SMART健康状态、通电时间、总读写量、磨损度及温度。
+    * **RAID**: 检测硬件RAID控制器。
+    * **网络**: 列出所有物理网卡的型号、状态、IP地址(IPv4/IPv6)、MAC地址、速度和实时流量。
+    * **显卡**: 检测VGA兼容的图形控制器。
+    * **主板**: 显示主板和BIOS的制造商、型号及版本。
+* **美观的报告格式**: 仿 `neofetch` 风格，使用box-drawing字符将信息分块展示，清晰直观。
+* **智能依赖处理**: 脚本会自动检测运行所需的命令。**从v1.2.0版本开始，如果检测到依赖缺失，它会提示用户并可自动安装**，极大提升了便利性。
+* **跨发行版支持**: 自动检测并支持主流的Linux发行版，如 Debian, Ubuntu, CentOS, RHEL, Fedora 等。
 
-硬盘: 磁盘分区使用情况，并能深入检测每块物理硬盘的型号、容量、SMART健康状态、通电时间、总读写量、磨损度及温度。
+## 🚀 使用方法 (Usage)
 
-RAID: 检测硬件RAID控制器。
+您只需要在您的服务器上以 `root` 权限运行一行命令即可。
 
-网络: 列出所有物理网卡的型号、状态、IP地址(IPv4/IPv6)、MAC地址、速度和实时流量。
+**通过 `wget` 运行:**
+```bash
+wget -O report.sh [https://raw.githubusercontent.com/YOUR_USERNAME/YOUR_REPO/main/report.sh](https://raw.githubusercontent.com/YOUR_USERNAME/YOUR_REPO/main/report.sh) && sudo bash report.sh
+```
 
-显卡: 检测VGA兼容的图形控制器。
+**通过 `curl` 运行:**
+```bash
+curl -L [https://raw.githubusercontent.com/YOUR_USERNAME/YOUR_REPO/main/report.sh](https://raw.githubusercontent.com/YOUR_USERNAME/YOUR_REPO/main/report.sh) -o report.sh && sudo bash report.sh
+```
+> **注意**: 请将 `YOUR_USERNAME/YOUR_REPO` 替换为您在GitHub上的实际用户名和仓库名。脚本需要 `root` 权限才能访问底层的硬件信息。
 
-主板: 显示主板和BIOS的制造商、型号及版本。
+## 📋 报告预览 (Preview)
 
-美观的报告格式: 仿 neofetch 风格，使用box-drawing字符将信息分块展示，清晰直观。
-
-智能依赖处理: 脚本会自动检测运行所需的命令。从v1.2.0版本开始，如果检测到依赖缺失，它会提示用户并可自动安装，极大提升了便利性。
-
-跨发行版支持: 自动检测并支持主流的Linux发行版，如 Debian, Ubuntu, CentOS, RHEL, Fedora 等。
-
-🚀 使用方法 (Usage)
-您只需要在您的服务器上以 root 权限运行一行命令即可。
-
-通过 wget 运行:
-
-wget -O report.sh https://raw.githubusercontent.com/YOUR_USERNAME/YOUR_REPO/main/report.sh && sudo bash report.sh
-
-通过 curl 运行:
-
-curl -L https://raw.githubusercontent.com/YOUR_USERNAME/YOUR_REPO/main/report.sh -o report.sh && sudo bash report.sh
-
-注意: 请将 YOUR_USERNAME/YOUR_REPO 替换为您在GitHub上的实际用户名和仓库名。脚本需要 root 权限才能访问底层的硬件信息。
-
-📋 报告预览 (Preview)
+```
 ════════════════════════════════════════════════════════════════════════════════
                                     系统硬件信息报告                                    
 ════════════════════════════════════════════════════════════════════════════════
@@ -88,59 +87,44 @@ curl -L https://raw.githubusercontent.com/YOUR_USERNAME/YOUR_REPO/main/report.sh
 │   温度:               46°C
 └──────────────────────────────────────────────────
 ... (更多信息)
+```
 
-📜 版本历史 (Changelog)
-v1.2.0 - 2025-07-19 (最新版)
-[功能] 新增依赖自动安装:
+## 📜 版本历史 (Changelog)
 
-脚本在启动时会检查所有必需的命令。
+### `v1.2.0` - 2025-07-19 (最新版)
+* **[功能] 新增依赖自动安装**:
+    * 脚本在启动时会检查所有必需的命令。
+    * 如果发现依赖缺失，会提示用户并在倒计时后，根据当前系统（Debian/Ubuntu/CentOS等）调用相应的包管理器（`apt-get`, `dnf`, `yum`）进行自动安装。
+    * 安装后会进行二次验证，确保所有依赖都已成功安装。
 
-如果发现依赖缺失，会提示用户并在倒计时后，根据当前系统（Debian/Ubuntu/CentOS等）调用相应的包管理器（apt-get, dnf, yum）进行自动安装。
+### `v1.1.0`
+* **[修复] 改进硬件兼容性**:
+    * **CPU**: 修正了在AMD Ryzen等平台上，处理器型号、线程数和频率解析错误的问题。
+    * **内存**: 重写了`dmidecode`的解析逻辑，使其能更稳定地识别不同主板和DMI布局下的物理内存条信息。
+    * **硬盘**: 修复了`numfmt`命令在某些系统版本上因不兼容的格式化参数而报错的问题，确保硬盘容量能正确显示。
+    * **网络**: 优化了IPv6地址的显示，当一个网卡拥有多个IPv6地址时，会自动换行对齐，使输出更整洁。
 
-安装后会进行二次验证，确保所有依赖都已成功安装。
+### `v1.0.0`
+* **[功能] 初始版本**:
+    * 实现了所有核心信息的检测与报告生成。
+    * 包含了美观的格式化输出。
+    * 实现了手动的依赖检查，如果缺少依赖会提示用户手动安装。
 
-v1.1.0
-[修复] 改进硬件兼容性:
+## 🛠️ 依赖 (Dependencies)
 
-CPU: 修正了在AMD Ryzen等平台上，处理器型号、线程数和频率解析错误的问题。
+为了获取详尽的硬件信息，本脚本依赖于以下命令行工具。在 `v1.2.0` 及更高版本中，脚本会尝试自动安装它们。
 
-内存: 重写了dmidecode的解析逻辑，使其能更稳定地识别不同主板和DMI布局下的物理内存条信息。
+* `coreutils`
+* `procps`
+* `util-linux`
+* `dmidecode`
+* `smartmontools` (`smartctl`)
+* `pciutils` (`lspci`)
+* `ethtool`
+* `iproute2` (`ip`)
+* `lshw`
+* `jq`
 
-硬盘: 修复了numfmt命令在某些系统版本上因不兼容的格式化参数而报错的问题，确保硬盘容量能正确显示。
+## 📄 许可 (License)
 
-网络: 优化了IPv6地址的显示，当一个网卡拥有多个IPv6地址时，会自动换行对齐，使输出更整洁。
-
-v1.0.0
-[功能] 初始版本:
-
-实现了所有核心信息的检测与报告生成。
-
-包含了美观的格式化输出。
-
-实现了手动的依赖检查，如果缺少依赖会提示用户手动安装。
-
-🛠️ 依赖 (Dependencies)
-为了获取详尽的硬件信息，本脚本依赖于以下命令行工具。在 v1.2.0 及更高版本中，脚本会尝试自动安装它们。
-
-coreutils
-
-procps
-
-util-linux
-
-dmidecode
-
-smartmontools (smartctl)
-
-pciutils (lspci)
-
-ethtool
-
-iproute2 (ip)
-
-lshw
-
-jq
-
-📄 许可 (License)
-本项目采用 MIT License 授权。
+本项目采用 [MIT License](https://opensource.org/licenses/MIT) 授权。
