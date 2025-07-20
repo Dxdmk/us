@@ -3,7 +3,7 @@
 #
 #  Hardware Info Report Script
 #  功能: 检测并生成物理服务器的详细硬件信息报告，可自动安装缺失的依赖。
-#  作者: Gemini
+#  作者: DX
 #  版本: 1.2.0 (增加了依赖自动安装功能)
 #  依赖: bash, lscpu, free, dmidecode, df, lsblk, smartctl, lspci, ethtool, ip, lshw, jq
 #  注意: 此脚本需要以 root 权限运行
